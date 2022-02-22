@@ -85,17 +85,73 @@ export default class LinkedList{
      */
     search(key){
 
+        if (key == 0){
+            console.log(`the key provided does't exist, the List starts with the index = 1 not 0`);
+            return {};
+        }
+
         let traverse = this.head;
         let i = 1;
-
+        
         if (key >= this.length) return this.tail;
         if (key == 1) return this.head;
 
-        while(traverse.next || i != key){
+        
+        while(traverse.next && i != key){
             traverse = traverse.next;
             i++;
         }
 
-        return traverse && i == k ? traverse : null;
+        return traverse && i == key ? traverse : null;
+    }
+
+    /**
+     * @name delete 
+     * @description Delete the first element with the key.
+     *
+     * @param   {int} key 
+     *     
+     * @returns  {boolean}
+     */
+    delete(key){
+        let traverse = this.head;
+        let i = 1;
+
+        if (key > this.length){
+            console.log(`the key provided does't exist, it exceeds the List length ${this.length}`);
+            return false;
+        }
+        if (key == 1) {
+            this.head = this.head.next;
+            this.length--;
+            return true;
+        };
+
+        while(traverse.next && i != key-1){
+            traverse = traverse.next;
+            i++;
+        }
+
+        if(traverse){
+            traverse.next = traverse.next.next;
+            this.length--;
+            return true;
+        }
+        return false;
+
+    } 
+
+    /**
+     * @name display 
+     * @description display all List's elements.
+     *     
+     * @returns  {void}
+     */    
+    display(){
+        let tmp = this.head;
+        while(tmp){
+            console.log('data ', tmp.val);
+            tmp = tmp.next;
+        }
     }
 }
