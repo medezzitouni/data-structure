@@ -1,5 +1,4 @@
-import LinkedList from "./LinkedList";
-import Node from "./Node";
+import LinkedList, { Node } from "./LinkedList";
 import promptBuilder from 'prompt-sync';
 
 
