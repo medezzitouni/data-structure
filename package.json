@@ -1,0 +1,30 @@
+{
+  "name": "js-data-structure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "LinkedList.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon --exec babel-node main.js",
+    "start": "node --exec babel-node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/methe-1/js-data-structure.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/methe-1/js-data-structure/issues"
+  },
+  "homepage": "https://github.com/methe-1/js-data-structure#readme",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.5"
+  },
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  }
+}
