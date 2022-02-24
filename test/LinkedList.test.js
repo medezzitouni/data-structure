@@ -68,9 +68,16 @@ describe('Linked List', () => {
         expect(list.search(4).val).toBe(294);
     })
 
-    test('delete: the right value got deleted', () =>{
+    test('delete: the right value got deleted', () => {
+
         let list = new LinkedList(new Node(initiated_value, null));
-        let vals = [1, 12, 9, 7]
+
+        // empty list
+        expect(list.delete(1)).toBe(true)
+        expect(() => list.delete(1)).toThrow()
+
+        let vals = [initiated_value, 1, 12, 9, 7]
+       
         for(let i of vals){
            list.insertToTail(i);
         }
@@ -78,7 +85,7 @@ describe('Linked List', () => {
         // delete the first element
         let old_length = list.length;
         expect(list.delete(1)).toBe(true);
-        expect(list.search(1).val).toBe(vals[0]);
+        expect(list.search(1).val).toBe(vals[1]);
         expect(list.length).toBe(old_length-1);
 
         // give a key that's greater than the list's length
