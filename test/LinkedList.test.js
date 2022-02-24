@@ -1,7 +1,7 @@
 import LinkedList, { Node } from "../src/LinkedList";
 
 
-describe('instert', () => {
+describe('Linked List', () => {
 
     let val = 120;
     let initiated_value = 8;
