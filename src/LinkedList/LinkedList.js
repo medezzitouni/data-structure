@@ -24,6 +24,10 @@ export default class LinkedList{
      */
     insertTo(val, index){
 
+        if(!this.head && !this.length){
+            this.insertToHead(val);
+            return;
+        }
         if(index > 1 && index >= this.length){
             this.insertToTail(val)
             return;
@@ -58,7 +62,10 @@ export default class LinkedList{
      * @param  {int}   index 
      */
     insertToHead(val){
-        this.head = new Node(val, this.head);
+        if(!this.head && !this.length)
+            this.head = this.tail = new Node(val, null);    
+        else
+            this.head = new Node(val, this.head);
         this.length++;
     }
 
@@ -70,6 +77,10 @@ export default class LinkedList{
      * @param  {int}   index 
      */
     insertToTail(val){
+        if(!this.head && !this.length) {
+            this.insertToHead(val);
+            return;
+        }
         this.tail.next = new Node(val, null);
         this.tail = this.tail.next;
         this.length++;
@@ -115,13 +126,15 @@ export default class LinkedList{
      */
     delete(key){
 
+        if(this.length == 0) throw 'the list is empty'
+
         if (key > this.length){
             console.log(`the key provided does't exist, it exceeds the List length ${this.length}`);
             return false;
         }
 
         if (key == 1) {
-            this.head = this.head.next;
+            this.head = this.head ? this.head.next : this.head;
             this.length--;
             return true;
         };
