@@ -22,9 +22,9 @@ export default class LinkedList{
      * @param   {*}    val     
      * @param  {int}   index 
      */
-    instertTo(val, index){
+    insertTo(val, index){
 
-        if(index >= this.length){
+        if(index > 1 && index >= this.length){
             this.insertToTail(val)
             return;
         }
@@ -37,7 +37,7 @@ export default class LinkedList{
         let traverse = this.head;
         let i = 1;
 
-        while(traverse.next || i != index-1){
+        while(traverse.next && i != index-1){
             traverse = traverse.next;
             i++;
         }
@@ -114,18 +114,20 @@ export default class LinkedList{
      * @returns  {boolean}
      */
     delete(key){
-        let traverse = this.head;
-        let i = 1;
 
         if (key > this.length){
             console.log(`the key provided does't exist, it exceeds the List length ${this.length}`);
             return false;
         }
+
         if (key == 1) {
             this.head = this.head.next;
             this.length--;
             return true;
         };
+
+        let traverse = this.head;
+        let i = 1;
 
         while(traverse.next && i != key-1){
             traverse = traverse.next;
@@ -150,7 +152,7 @@ export default class LinkedList{
     display(){
         let tmp = this.head;
         while(tmp){
-            console.log('data ', tmp.val);
+            console.log(tmp.val);
             tmp = tmp.next;
         }
     }
