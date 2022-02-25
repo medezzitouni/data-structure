@@ -6,7 +6,7 @@ references
 
  - Todo List
  - [X] LinkedList
- - [ ] Stacks
+ - [X] Stacks
  - [ ] Queues
  - [ ] Hash Tables
  - [ ] Trees
