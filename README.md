@@ -6,14 +6,14 @@ references
 
  - Todo List
  - [X] LinkedList
- - [ ] - Stacks
- - [ ] - Queues
- - [ ] - Hash Tables
- - [ ] - Trees
+ - [ ] Stacks
+ - [ ] Queues
+ - [ ] Hash Tables
+ - [ ] Trees
         - Binary Search Trees
         - Heaps 
         - Treaps
-  - [ ] - Graphs
+  - [ ] Graphs
         - Directed Graphs
         - Undirected Graphs
 
