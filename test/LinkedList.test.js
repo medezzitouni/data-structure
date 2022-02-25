@@ -11,7 +11,8 @@ describe('Linked List', () => {
         list.insertToHead(val);
         expect(list.head.val).toBe(val);
         expect(list.tail.val).toBe(initiated_value);
-
+        expect(() => list.insertToHead(undefined)).toThrow();
+        expect(() => list.insertToHead(null)).toThrow();
     })
 
     test('insertToTail: the value got inserted into the tail', () =>{

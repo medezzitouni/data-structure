@@ -62,6 +62,7 @@ export default class LinkedList{
      * @param  {int}   index 
      */
     insertToHead(val){
+        if(val == undefined || val == null) throw 'This function accept 1 arg'
         if(!this.head && !this.length)
             this.head = this.tail = new Node(val, null);    
         else
@@ -134,7 +135,7 @@ export default class LinkedList{
         }
 
         if (key == 1) {
-            this.head = this.head ? this.head.next : this.head;
+            this.head = this.head.next ? this.head.next : null;
             this.length--;
             return true;
         };
