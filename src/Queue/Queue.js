@@ -42,7 +42,7 @@ export default class Queue{
      */
      dequeue(){
         if(this.isEmpty()) return null;
-        let ret = this.list.last.val;
+        let ret = this.list.tail.val;
         this.list.delete(this.length);
         return ret;
     }
@@ -55,7 +55,7 @@ export default class Queue{
      * @returns {any}
      */
     peek(){
-        return this.isEmpty() ? null : this.list.last.val;
+        return this.isEmpty() ? null : this.list.tail.val;
     }
 
      /**
