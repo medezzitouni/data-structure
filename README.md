@@ -8,6 +8,8 @@ references
  - [X] LinkedList
  - [X] Stacks
  - [ ] Queues
+   - [X] Implement
+   - [ ] Test
  - [ ] Hash Tables
  - [ ] Trees
         - Binary Search Trees
